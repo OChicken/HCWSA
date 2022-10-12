@@ -14,4 +14,4 @@
 
 ## 鸣谢
 
-[![](https://opencollective.com/html-react-parser/contributors.svg?width=890&button=false)](https://github.com/OChicken/HCWSA/graphs/contributors)
+[![](https://github.com/OChicken/HCWSA/contributors.svg?width=890&button=false)](https://github.com/OChicken/HCWSA/graphs/contributors)
