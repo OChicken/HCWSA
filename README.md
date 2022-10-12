@@ -11,7 +11,3 @@
 ## 协议 License
 
 本手册之发布遵循 LaTeX 项目公共许可证 1.3 c 或更高版本。
-
-## 鸣谢
-
-[![](https://github.com/OChicken/HCWSA/contributors.svg?width=890&button=false)](https://github.com/OChicken/HCWSA/graphs/contributors)
