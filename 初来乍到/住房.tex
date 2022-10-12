@@ -9,3 +9,28 @@
 \section{租房广告里的常见名词之定义}
 
 \section{出境前寻找住房的注意事项}
+
+\section{常见问题集}
+
+我们根据用户社区反馈整理了下面一些常见的问题，用户在遇到问题时，应当首先查阅本手册和本部分的常见的问题。
+
+\begin{enumerate}[itemsep=1.5ex]
+  \item \question{有没有办法章节用“第一章，第一节，（一）”这种？}
+    见前文介绍，可以使用 \lstinline{scheme=chinese} 设置。
+  \item \question{大佬，我想把正文字体改为亮色，背景色改为黑灰色。}
+    页面颜色可以使用 \lstinline{\pagecolor} 命令设置，文本命令可以参考\href{https://tex.stackexchange.com/questions/278544/xcolor-what-is-the-equivalent-of-default-text-color}{这里}进行设置。
+  \item \question{\lstinline{! LaTeX Error: Unknown option 'scheme=plain' for package 'ctex'.}}
+    你用的 C\TeX{} 套装吧？这个里面的 \lstinline{ctex} 宏包已经是已经是 10 年前的了，与本模板使用的 \lstinline{ctex} 宏集有很大区别。不建议 C\TeX{} 套装了，请卸载并安装 \TeX{} Live 2022。
+  \item \question{我该使用什么版本？}
+    请务必使用\href{https://github.com/ElegantLaTeX/ElegantBook/releases}{最新正式发行版}，发行版间不定期可能会有更新（修复 bug 或者改进之类），如果你在使用过程中没有遇到问题，不需要每次更新\href{https://github.com/ElegantLaTeX/ElegantBook/archive/master.zip}{最新版}，但是在发行版更新之后，请尽可能使用最新版（发行版）！最新发行版可以在 GitHub 或者 \TeX{} Live 2021 内获取。
+  \item \question{我该使用什么编辑器？}
+    你可以使用 \TeX{} Live 2021 自带的编辑器 \TeX{}works 或者使用 \TeX{}studio，\TeX works 的自动补全，你可以参考我们的总结 \href{https://github.com/EthanDeng/texworks-autocomplete}{\TeX works 自动补全}。推荐使用 \TeX{} Live 2021 + \TeX{}studio。我自己用 VS Code 和 Sublime Text，相关的配置说明，请参考 \href{https://github.com/EthanDeng/vscode-latex}{\LaTeX{} 编译环境配置：Visual Studio Code 配置简介} 和 \href{https://github.com/EthanDeng/sublime-text-latex}{Sublime Text 搭建 \LaTeX{} 编写环境}。
+  \item \question{您好，我们想用您的 ElegantBook 模板写一本书。关于机器学习的教材，希望获得您的授权，谢谢您的宝贵时间。}
+    模板的使用修改都是自由的，你们声明模板来源以及模板地址（GitHub 地址）即可，其他未尽事宜按照开源协议 LPPL-1.3c。做好之后，如果方便的话，可以给我们一个链接，我把你们的教材放在 Elegant\LaTeX{} 用户作品集里。
+  \item \question{请问交叉引用是什么？}
+    本群和本模板适合有一定 \LaTeX{} 基础的用户使用，新手请先学习 \LaTeX{} 的基础，理解各种概念，否则你将寸步难行。
+  \item \question{代码高亮环境能用其他语言吗？}
+    可以的，ElegantBook 模板用的是 \lstinline{listings} 宏包，你可以在环境（\lstinline{lstlisting}）之后加上语言（比如 Python 使用 \lstinline{language=Python} 选项），全局语言修改请使用 \lstinline{lstset} 命令，更多信息请参考宏包文档。
+  \item \question{群主，什么时候出 Beamer 的模板（主题），ElegantSlide 或者 ElegantBeamer？}
+    由于 Beamer 中有一个很优秀的主题 \href{https://github.com/matze/mtheme}{Metropolis}。后续确定不会再出任何主题/模板，请大家根据需要修改已有主题。
+\end{enumerate}

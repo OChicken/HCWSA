@@ -7,3 +7,93 @@
 \section{Sparkasse Aachen}
 
 \section{两家银行的对比}
+
+\section{字体选项}
+
+字体选项独立成章的原因是，我们希望本模板的用户关心模板使用的字体，知晓自己使用的字体以及遇到字体相关的问题能更加便捷地找到答案。
+
+\textcolor{red}{\bfseries 重要提示}：从 3.10 版本更新之后，沿用至今的 newtx 系列字体被重新更改为 cm 字体。并且新增中文字体（\lstinline{chinesefont}）选项。
+
+\section{数学字体选项}
+
+本模板定义了一个数学字体选项（\lstinline{math}），可选项有三个：
+\begin{enumerate}
+  \item \lstinline{math=cm}（默认），使用 \LaTeX{} 默认数学字体（推荐，无需声明）；
+  \item \lstinline{math=newtx}，使用 \lstinline{newtxmath} 设置数学字体（潜在问题比较多）。
+  \item \lstinline{math=mtpro2}，使用 \lstinline{mtpro2} 宏包设置数学字体，要求用户已经成功安装此宏包。
+\end{enumerate}
+
+\section{使用 newtx 系列字体}
+
+如果需要使用原先版本的 \lstinline{newtx} 系列字体，可以通过显示声明数学字体：
+
+\begin{lstlisting}
+\documentclass[math=newtx]{elegantbook}
+\end{lstlisting}
+
+\subsection{连字符}
+
+如果使用 \lstinline{newtx} 系列字体宏包，需要注意下连字符的问题。
+\begin{equation}
+  \int_{R^q} f(x,y) dy.\emph{of\kern0pt f} \sin x
+\end{equation}
+的代码为
+\begin{lstlisting}
+\begin{equation}
+  \int_{R^q} f(x,y) dy.\emph{of\kern0pt f} \sin x
+\end{equation}
+\end{lstlisting}
+
+\subsection{宏包冲突}
+
+另外在 3.08 版本中，有用户反馈模板在和 \lstinline{yhmath} 以及 \lstinline{esvect} 等宏包搭配使用的时候会出现报错：
+\begin{lstlisting}
+LaTeX Error:
+   Too many symbol fonts declared.
+\end{lstlisting}
+
+原因是在使用 \lstinline{newtxmath} 宏包时，重新定义了数学字体用于大型操作符，达到了 {\heiti 最多 16 个数学字体} 的上限，在调用其他宏包的时候，无法新增数学字体。为了减少调用非常用宏包，在此给出如何调用 \lstinline{yhmath} 以及 \lstinline{esvect} 宏包的方法。
+
+请在 \lstinline{elegantbook.cls} 内搜索 \lstinline{yhmath} 或者 \lstinline{esvect}，将你所需要的宏包加载语句\textit{取消注释}即可。
+\begin{lstlisting}
+%%% use yhmath pkg, uncomment following code
+% \let\oldwidering\widering
+% \let\widering\undefined
+% \RequirePackage{yhmath}
+% \let\widering\oldwidering
+
+%%% use esvect pkg, uncomment following code
+% \RequirePackage{esvect}
+\end{lstlisting}
+
+\section{中文字体选项}
+模板从 3.10 版本提供中文字体选项 \lstinline{chinesefont}，可选项有
+\begin{enumerate}
+\item \lstinline{ctexfont}：默认选项，使用 \lstinline{ctex} 宏包根据系统自行选择字体，可能存在字体缺失的问题，更多内容参考 \lstinline{ctex} 宏包\href{https://ctan.org/pkg/ctex}{官方文档}\footnote{可以使用命令提示符，输入 \lstinline{texdoc ctex} 调出本地 \lstinline{ctex} 宏包文档}。
+\item \lstinline{founder}：方正字体选项（\textbf{需要安装方正字体}），后台调用 \lstinline{ctex} 宏包并且使用 \lstinline{fontset=none} 选项，然后设置字体为方正四款免费字体，方正字体下载注意事项见后文，用户只需要安装方正字体即可使用该选项。
+\item \lstinline{nofont}：后台会调用 \lstinline{ctex} 宏包并且使用 \lstinline{fontset=none} 选项，不设定中文字体，用户可以自行设置中文字体，具体见后文。
+\end{enumerate}
+
+\subsection{方正字体选项}
+由于使用 \lstinline{ctex} 宏包默认调用系统已有的字体，部分系统字体缺失严重，因此，用户希望能够使用其它字体，我们推荐使用方正字体。方正的{\songti 方正书宋}、{\heiti 方正黑体}、{\kaishu 方正楷体}、{\fangsong 方正仿宋}四款字体均可免费试用，且可用于商业用途。用户可以自行从\href{http://www.foundertype.com/}{方正字体官网}下载此四款字体，在下载的时候请\textbf{务必}注意选择 GBK 字符集，也可以使用 \href{https://www.latexstudio.net/}{\LaTeX{} 工作室}提供的\href{https://pan.baidu.com/s/1BgbQM7LoinY7m8yeP25Y7Q}{方正字体，提取码为：njy9} 进行安装。安装时，{\kaishu Win 10 用户请右键选择为全部用户安装，否则会找不到字体。}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.9\textwidth]{founder.png}
+\end{figure}
+
+\subsection{其他中文字体}
+如果你想完全自定义字体\footnote{这里仍然以方正字体为例。}，你可以选择 \lstinline{chinesefont=nofont}，然后在导言区设置
+\begin{lstlisting}
+\setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong-Z01}
+\setCJKsansfont[BoldFont={FZHei-B01}]{FZKai-Z03}
+\setCJKmonofont[BoldFont={FZHei-B01}]{FZFangSong-Z02}
+\setCJKfamilyfont{zhsong}{FZShuSong-Z01}
+\setCJKfamilyfont{zhhei}{FZHei-B01}
+\setCJKfamilyfont{zhkai}[BoldFont={FZHei-B01}]{FZKai-Z03}
+\setCJKfamilyfont{zhfs}[BoldFont={FZHei-B01}]{FZFangSong-Z02}
+\newcommand*{\songti}{\CJKfamily{zhsong}}
+\newcommand*{\heiti}{\CJKfamily{zhhei}}
+\newcommand*{\kaishu}{\CJKfamily{zhkai}}
+\newcommand*{\fangsong}{\CJKfamily{zhfs}}
+\end{lstlisting}

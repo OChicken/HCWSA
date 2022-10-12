@@ -7,3 +7,183 @@
 \section{从入境城市乘坐列车到达亚琛}
 
 \section{从车站乘公交到住所}
+
+\section{版本更新历史}
+
+根据用户的反馈，我们不断修正和完善模板。由于 3.00 之前版本与现在版本差异非常大，在此不列出 3.00 之前的更新内容。
+
+\datechange{2022/08/17}{版本 4.5 pre}
+\begin{change}
+  \item \textbf{重要改动}：提供了一个新的文档类选项 \lstinline|usesamecnt|，可以使全局的定理类环境使用同一个计数器。
+  \item \textbf{重要改动}：修改了 \lstinline|\elegantnewtheorem| 命令，使其有第五个（可选）参数。
+\end{change}
+
+\datechange{2022/08/15}{版本 4.4 正式发布。}
+
+\begin{change}
+  \item \textbf{重要改动}：提供了一个定义定理类环境的命令 \lstinline|\elegantnewtheorem|；
+  \item \textbf{重要改动}：为所有内置定理类环境提供了带星号的版本，带星号的定理类环境不会编号，修复 \href{https://github.com/ElegantLaTeX/ElegantBook/issues/167}{issue: \#167}；
+  \item \textbf{重要改动}：在 \lstinline{scheme=chinese} 下将目录中的“第 1 章”修改为“第一章”；
+  \item 将 TeX Gyre Termes 改为 TeX Gyre TermesX，使英文部分字形与 newtx 系列宏包更相近；
+  \item 重写了内置定理类环境的实现方法，修复了一些 bug，由于修改部分较大，如果引入了新的 bug，请及时在 QQ 群或 \href{https://github.com/ElegantLaTeX}{Github} 上进行反馈；
+  \item 删除 Gitee 仓库地址，恢复 GitHub 提交（pull requests)；
+  \item 将参考文献命令添加到导言区，使编辑器能够对参考文献自动补全。
+\end{change}
+
+\datechange{2022/04/09}{版本 4.3 正式发布。}
+
+\begin{change}
+  \item 放弃 newtx 系列宏包的设置，改用 TeX Gyre Termes，并设置其他字体；
+  \item 修改定理类环境内部字体设置，修复环境内部中文无法加粗问题；
+  \item 增加定理类环境的计数器选项 \lstinline{thmcnt}，可选 \lstinline{chapter} 和 \lstinline{section}；
+  \item 增加 \lstinline{bibend} 选项，可选 \lstinline{bibend=biber}（默认）和 \lstinline{bibend=bibtex}。
+\end{change}
+
+
+
+\datechange{2022/03/08}{版本 4.2 正式发布。}
+
+\begin{change}
+  \item 对于 newtx 系列宏包更新导致的字体 bug 的修复；
+  \item 修缮目录格式，为了达到这个目的，重新改写 \lstinline{\chaptername} 的重定义语句；
+  \item 增加日语 \lstinline{lang=jp} 设定。
+  \item 这个版本为一个临时性版本，在 \TeX Live 2022 发布之后，将尽快发布 4.3 版本，由于对于中文的改动比较大，可能会出现预期之外的 bug，有问题可以在 QQ 群或者 Github 反馈。
+\end{change}
+
+
+\datechange{2021/05/02}{版本 4.1 正式发布。}
+
+\begin{change}
+  \item \textbf{重要改动}：由原先的 \hologo{BibTeX} 改为 biblatex 编译方式（后端为 \lstinline{biber}），请注意两者之间的差异；
+  \item \textbf{重要改进}：修改对于定理写法兼容方式，提高数学公式代码的兼容性；
+  \item 页面设置改动，默认页面更宽；方便书写和阅读；
+  \item 支持目录文字以及页码跳转；
+  \item 不再维护 \hologo{pdfLaTeX} 中文支持方式，请务必使用 \hologo{XeLaTeX} 编译中文文稿。
+  \item 增加多个语言选项，法语 \lstinline{lang=fr}、荷兰语 \lstinline{lang=nl}、匈牙利语 \lstinline{lang=hu}、西班牙语 \lstinline{lang=es}、蒙古语 \lstinline{lang=mn} 等。
+\end{change}
+
+
+\datechange{2020/04/12}{版本 3.11 正式发布，\textcolor{red}{此版本为 3.x 最后版本。}}
+
+\begin{change}
+  \item \textbf{重要修正}：修复因为 \lstinline{gbt7714} 宏包更新导致的 \lstinline{natbib option clash} 错误；
+  \item 由于 \lstinline{pgfornament} 宏包未被 \TeX{} Live 2020 收录，因此删除 base 相关的内容；
+  \item 修复部分环境的空格问题；
+  \item 增加了意大利语言选项 \lstinline{lang=it}。
+\end{change}
+
+
+\datechange{2020/02/10}{版本 3.10 正式发布}
+
+\begin{change}
+  \item 增加数学字体选项 \lstinline{math}，可选项为 \lstinline{newtx} 和 \lstinline{cm}。\\
+  \textbf{重要提示}：原先通过 \lstinline{newtxmath} 宏包设置的数学字体改为 \LaTeX{} 默认数学字体，如果需要保持原来的字体，需要显式声明数学字体（\lstinline{math=newtx}）；
+  \item 新增中文字体选项 \lstinline{chinesefont}，可选项为 \lstinline{ctexfont}、\lstinline{founder} 和 \lstinline{nofont}。
+  \item 将封面作者信息设置为可选，并且增加自定义信息命令 \lstinline{\bioinfo}；
+  \item 在说明文档中增加版本历史，新增 \lstinline{\datechange} 命令和 \lstinline{change} 环境；
+  \item 增加汉化章节选项 \lstinline{scheme}，可选项为汉化 \lstinline{chinese}；
+  \item 由于 \lstinline{\lvert} 问题已经修复，重新调整 \lstinline{ctex} 宏包和 \lstinline{amsmath} 宏包位置。
+  \item 修改页眉设置，去除了 \lstinline{\lastpage} 以避免 page anchor 问题，加入 \lstinline{\frontmatter}。
+  \item 修改参考文献选项 \lstinline{cite}，可选项为数字 \lstinline{numbers}、 作者-年份 \lstinline{authoryear} 以及上标 \lstinline{super}。
+  \item 新增参考文献样式选项 \lstinline{bibstyle}，并将英文模式下参考文献样式 \lstinline{apalike} 设置为默认值，中文仍然使用 \lstinline{gbt7714} 宏包设置。
+\end{change}
+
+\datechange{2019/08/18}{版本 3.09 正式发布}
+
+\begin{change}
+  \item \lstinline{\elegantpar} 存在 bug，删除 \lstinline{\elegantpar} 命令，建议用户改用 \lstinline{\marginnote} 和 \lstinline{\marginpar} 旁注命令。
+  \item 积分操作符统一更改为 \lstinline{esint} 宏包设置；
+  \item 新增目录选项 \lstinline{toc}，可选项为单栏 \lstinline{onecol} 和双栏 \lstinline{twocol}；
+  \item 手动增加参考文献选项 \lstinline{cite}，可选项为上标形式 \lstinline{super}；
+  \item 修正章节习题（\lstinline{problemset}）环境。
+\end{change}
+
+\datechange{2019/05/28}{版本 3.08 正式发布}
+
+\begin{change}
+  \item 修复 \lstinline{\part} 命令。
+  \item 引入 Note 模板中的 \lstinline{pad} 选项 \lstinline{device=pad}。
+  \item 数学字体加入 \lstinline{mtpro2} 可选项 \lstinline{math=mtpro2}，使用免费的 \lstinline{lite} 子集。
+  \item 将参考文献默认显示方式 \lstinline{authoyear} 改为 \lstinline{numbers}。
+  \item 引入旁注命令 \lstinline{\marginpar}（测试）。
+  \item 新增章节摘要环境 \lstinline{introduction}。
+  \item 新增章节习题环境 \lstinline{problemset}。
+  \item 将 \lstinline{\equote} 重命名为 \lstinline{\extrainfo}。
+  \item 完善说明文档，增加致谢部分。
+\end{change}
+
+\datechange{2019/04/15}{版本 3.07 正式发布}
+
+\begin{change}
+  \item 删除中英文自定义字体总设置。
+  \item 新增颜色主题，并将原绿色默认主题设置为蓝色 \lstinline{color=blue}。
+  \item 引入隐藏装饰图案选项 \lstinline{base}，可选项有显示 \lstinline{show} 和隐藏 \lstinline{hide}。
+  \item 新增定理模式 \lstinline{mode}，可选项有简单模式 \lstinline{simple} 和炫彩模式 \lstinline{fancy}。
+  \item 新增隐藏证明、答案等环境的选项 \lstinline{result=noanswer}。
+\end{change}
+
+\datechange{2019/02/25}{版本 3.06 正式发布}
+
+\begin{change}
+  \item 删除水印。
+  \item 新封面，新装饰图案。
+  \item 添加引言使用说明。
+  \item 修复双面 \lstinline{twoside}。
+  \item 美化列表环境。
+  \item 增加 \lstinline{\subsubsection} 的设置。
+  \item 将模板拆分成中英文语言模式。
+  \item 使用 \lstinline{lstlisting} 添加代码高亮。
+  \item 增加定理类环境使用说明。
+\end{change}
+
+\datechange{2019/01/22}{版本 3.05 正式发布}
+
+\begin{change}
+  \item 添加 \lstinline{xeCJK} 宏包中文支持方案。
+  \item 修复模板之前对 Ti\textit{k}Z 单位的改动。
+  \item 更新 logo 图。
+\end{change}
+
+\datechange{2019/01/15}{版本 3.04 正式发布}
+
+\begin{change}
+  \item 格式化模板代码。
+  \item 增加 \lstinline{\equote} 命令。
+  \item 修改 \lstinline{\date}。
+\end{change}
+
+\datechange{2019/01/08}{版本 3.03 正式发布}
+
+\begin{change}
+  \item 修复附录章节显示问题。
+  \item 小幅优化封面代码。
+\end{change}
+
+\datechange{2018/12/31}{版本 3.02 正式发布}
+
+\begin{change}
+  \item 修复名字系列命令自定义格式时出现的空格问题，比如 \lstinline{\listfigurename}。
+  \item 英文定理类名字改为中文名。
+  \item 英文结构名改为中文。
+\end{change}
+
+\datechange{2018/12/16}{版本 3.01 正式发布}
+
+\begin{change}
+  \item 调整 \lstinline{ctex} 宏包。
+  \item 说明文档增加更新内容。
+\end{change}
+
+\datechange{2018/12/06}{版本 3.00 正式发布}
+
+\begin{change}
+  \item 删除 \lstinline{mathpazo} 数学字体选项。
+  \item 添加邮箱命令 \lstinline{\mailto}。
+  \item 修改英文字体为 \lstinline{newtx} 系列，另外大型操作符号维持 cm 字体。
+  \item 中文字体改用 \lstinline{ctex} 宏包自动设置。
+  \item 删除 \lstinline{xeCJK} 字体设置，原因是不同系统字体不方便统一。
+  \item 定理换用 \lstinline{tcolorbox} 宏包定义，并基本维持原有的定理样式，优化显示效果，支持跨页；定理类名字重命名，如 etheorem 改为 theorem 等等。
+  \item 删去自定义的缩进命令 \lstinline{\Eindent}。
+  \item 添加参考文献宏包 \lstinline{natbib}。
+  \item 颜色名字重命名。
+\end{change}
