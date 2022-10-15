@@ -32,13 +32,8 @@
 
 \addbibresource[location=local]{reference.bib} % 参考文献，不要删除
 
-\iffalse
-\pagestyle{fancy}
-\lhead{
-\newgeometry{margin = 0in}
-\parindent=0pt
-\includegraphics[scale=0.1]{Bilder/header.png}}
-\fi
+\usepackage{background}
+\backgroundsetup{placement=top,scale=1,angle=0,opacity=1,contents={\includegraphics[width=\paperwidth, keepaspectratio]{Bilder/header.png}}}
 
 % --------------------------------------------------------------
 % Title Fonts Settings
