@@ -133,7 +133,7 @@
 \ifdefstring{\ELEGANT@device}{normal}{
   \geometry{
     a4paper,
-    top=25.4mm, bottom=25.4mm,
+    top=25.2mm, bottom=25.4mm,
     left=20mm, right=20mm,
     headheight=2.17cm,
     headsep=4mm,
