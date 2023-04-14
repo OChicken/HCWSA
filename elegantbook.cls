@@ -363,7 +363,7 @@
 
 \RequirePackage{mwe}
 \newcommand{\logo}[1]{\gdef\@logo{#1}}
-\newcommand{\cover}[1]{\gdef\@cover{#1}}
+%\newcommand{\cover}[1]{\gdef\@cover{#1}}
 
 \newcommand{\question}[1]{{\par\citshape #1}\\[0.2ex]}
 
@@ -1271,75 +1271,75 @@
 \renewcommand{\chaptermark}[1]{\markboth{\xchaptertitle\, #1}{}}
 
 
-\renewcommand*{\maketitle}{%
-\hypersetup{pageanchor=false}
-\pagenumbering{Alph}
-\begin{titlepage}
-  \newgeometry{margin = 0in}
-  \parindent=0pt
-  \ifdefstring{\ELEGANT@device}{normal}{
-    \ifcsname @cover\endcsname
-      \includegraphics[width=\linewidth]{\@cover}
-    \else
-      \includegraphics[width=\linewidth]{example-image}
-    \fi
-  }{\relax}
-  \ifdefstring{\ELEGANT@device}{pad}{
-    \ifcsname @cover\endcsname
-      \includegraphics[trim=0 26bp 0 26bp,clip=true, width=\linewidth]{\@cover}
-    \else
-      \includegraphics[trim=0 26bp 0 26bp,clip=true, width=\linewidth]{example-image}
-    \fi
-  }{\relax}
-  \setlength{\fboxsep}{0pt}
-  %\colorbox{coverlinecolor}{\makebox[\linewidth][c]{\shortstack[c]{\vspace{0.5in}}}}
-  \vfill
-  \vskip-2ex
-  \hspace{2em}
-  \parbox{0.8\textwidth}{
-    \bfseries\Huge 
-      \ifcsname @title\endcsname \@title \fi
-    \par}
-  \vfill
-  \vspace{-1.0cm}
-  \setstretch{2.5}
-  \hspace{2.5em}
-  \begin{minipage}[c]{0.67\linewidth}
-    {\color{darkgray}\bfseries\Large
-      \ifcsname @subtitle\endcsname\@subtitle\\[2ex]\fi}
-    \color{gray}\normalsize
-    {\renewcommand{\arraystretch}{0.618}
-    \begin{tabular}{l}
-      % \ifcsname @author\endcsname \authorname \@author\\\fi
-      \ifx\@author\empty\else\authorname\cnormal\@author\\ \fi
-      \ifcsname @institute\endcsname \institutename \cnormal\@institute\\ \fi
-      % \ifcsname @date\endcsname  \@date\\\fi
-      \ifx\@date\empty\else\datename\cnormal\@date \\ \fi
-      \ifcsname @version\endcsname \cnormal\versionname\@version\\ \fi
-      \ifcsname @bioinfo\endcsname \cnormal\@bioinfo\\ \fi
-    \end{tabular}}
-  \end{minipage}
-  \begin{minipage}[c]{0.27\linewidth}
-  \begin{tikzpicture}[remember picture,overlay]
-    \begin{pgfonlayer}{background}
-      \node[opacity=0.8,
-            anchor=south east,
-            outer sep=0pt,
-            inner sep=0pt] at ($(current page.south east) +(-0.8in,1.5in)$) {
-              \ifcsname @logo\endcsname\includegraphics[width=4.2cm]{\@logo}\fi};
-    \end{pgfonlayer}
-  \end{tikzpicture}
-  \end{minipage}
-  \vfill
-  \begin{center}
-    \setstretch{1.3}
-    \parbox[t]{0.7\textwidth}{\centering \citshape 
-      \ifcsname @extrainfo\endcsname\@extrainfo\fi}
-  \end{center}
-  \vfill
-\end{titlepage}
-\restoregeometry
-\thispagestyle{empty}}
+%\renewcommand*{\maketitle}{%
+%\hypersetup{pageanchor=false}
+%\pagenumbering{Alph}
+%\begin{titlepage}
+%  \newgeometry{margin = 0in}
+%  \parindent=0pt
+%  \ifdefstring{\ELEGANT@device}{normal}{
+%    \ifcsname @cover\endcsname
+%      \includegraphics[width=\linewidth]{\@cover}
+%    \else
+%      \includegraphics[width=\linewidth]{example-image}
+%    \fi
+%  }{\relax}
+%  \ifdefstring{\ELEGANT@device}{pad}{
+%    \ifcsname @cover\endcsname
+%      \includegraphics[trim=0 26bp 0 26bp,clip=true, width=\linewidth]{\@cover}
+%    \else
+%      \includegraphics[trim=0 26bp 0 26bp,clip=true, width=\linewidth]{example-image}
+%    \fi
+%  }{\relax}
+%  \setlength{\fboxsep}{0pt}
+%  %\colorbox{coverlinecolor}{\makebox[\linewidth][c]{\shortstack[c]{\vspace{0.5in}}}}
+%  \vfill
+%  \vskip-2ex
+%  \hspace{2em}
+%  \parbox{0.8\textwidth}{
+%    \bfseries\Huge 
+%      \ifcsname @title\endcsname \@title \fi
+%    \par}
+%  \vfill
+%  \vspace{-1.0cm}
+%  \setstretch{2.5}
+%  \hspace{2.5em}
+%  \begin{minipage}[c]{0.67\linewidth}
+%    {\color{darkgray}\bfseries\Large
+%      \ifcsname @subtitle\endcsname\@subtitle\\[2ex]\fi}
+%    \color{gray}\normalsize
+%    {\renewcommand{\arraystretch}{0.618}
+%    \begin{tabular}{l}
+%      % \ifcsname @author\endcsname \authorname \@author\\\fi
+%      \ifx\@author\empty\else\authorname\cnormal\@author\\ \fi
+%      \ifcsname @institute\endcsname \institutename \cnormal\@institute\\ \fi
+%      % \ifcsname @date\endcsname  \@date\\\fi
+%      \ifx\@date\empty\else\datename\cnormal\@date \\ \fi
+%      \ifcsname @version\endcsname \cnormal\versionname\@version\\ \fi
+%      \ifcsname @bioinfo\endcsname \cnormal\@bioinfo\\ \fi
+%    \end{tabular}}
+%  \end{minipage}
+%  \begin{minipage}[c]{0.27\linewidth}
+%  \begin{tikzpicture}[remember picture,overlay]
+%    \begin{pgfonlayer}{background}
+%      \node[opacity=0.8,
+%            anchor=south east,
+%            outer sep=0pt,
+%            inner sep=0pt] at ($(current page.south east) +(-0.8in,1.5in)$) {
+%              \ifcsname @logo\endcsname\includegraphics[width=4.2cm]{\@logo}\fi};
+%    \end{pgfonlayer}
+%  \end{tikzpicture}
+%  \end{minipage}
+%  \vfill
+%  \begin{center}
+%    \setstretch{1.3}
+%    \parbox[t]{0.7\textwidth}{\centering \citshape 
+%      \ifcsname @extrainfo\endcsname\@extrainfo\fi}
+%  \end{center}
+%  \vfill
+%\end{titlepage}
+%\restoregeometry
+%\thispagestyle{empty}}
 
 
 \newcommand{\dollar}{\mbox{\textdollar}}
