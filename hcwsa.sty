@@ -1,0 +1,60 @@
+\ProvidesPackage{hcwsa}
+
+\newcommand{\textsbf}[1]{\textsf{\textbf{#1}}}
+\RequirePackage[UTF8]{ctex}
+\RequirePackage{setspace}
+
+\RequirePackage{color,xcolor}
+\definecolor{lightblue}{HTML}{60C5E8}
+
+\RequirePackage{hyperref}
+\hypersetup{
+  breaklinks,
+  unicode,
+  linktoc=all,
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  pdfkeywords={ElegantBook},
+  colorlinks,
+  linkcolor=lightblue,
+  citecolor=lightblue,
+  urlcolor=lightblue,
+  plainpages=false,
+  pdfstartview=FitH,
+  pdfborder={0 0 0},
+  linktocpage
+}
+\RequirePackage{graphicx}
+
+\RequirePackage{geometry}
+\geometry{
+  a4paper,
+  top=25.2mm, bottom=25.4mm,
+  left=20mm, right=20mm,
+  headheight=2.17cm,
+  headsep=4mm,
+  footskip=12mm
+}
+
+\RequirePackage{enumitem}
+
+\usepackage{background}
+\backgroundsetup{placement=top,scale=1,angle=0,opacity=1,contents={\includegraphics[width=\paperwidth, keepaspectratio]{Bilder/header.png}}}
+
+\renewcommand{\thepart}{\Alph{part}}
+
+\usepackage{remreset}
+\makeatletter
+\@removefromreset{chapter}{part}
+\@removefromreset{section}{chapter}
+\@addtoreset{chapter}{part}
+\@addtoreset{section}{chapter}
+\makeatother
+
+\usepackage{chngcntr}
+\counterwithin{chapter}{part}
+\counterwithin{section}{chapter}
+
+\renewcommand{\thepart}{\Alph{part}}
+\renewcommand{\thechapter}{\thepart.\arabic{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
