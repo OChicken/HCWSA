@@ -1,56 +1,36 @@
-\documentclass[a4paper,lang=cn,10pt,newtx,scheme=chinese]{elegantbook}
-
-%\title{ElegantBook：优美的 \LaTeX{} 书籍模板}
-%\subtitle{Elegant\LaTeX{} 经典之作}
-
-%\author{Ethan Deng \& Liam Huang}
-%\institute{Elegant\LaTeX{} Program}
-%\date{Aug 17, 2022}
-%\version{4.5}
-%\bioinfo{自定义}{信息}
-
-%\extrainfo{要让一群人团结起来，需要的不是英明的领导，而是共同的敌人。—— 比企谷八幡}
-
-%\setcounter{tocdepth}{3}
-
-%\logo{logo-blue.png}
-
-%\begin{titlepage}
-%\cover{figure/cover.jpg}
-%\cover{Bilder/Front_Cover_.png}
-%\end{titlepage}
-
-% 本文档命令
-\usepackage{array}
-\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
-
-% 修改标题页的橙色带
-\definecolor{customcolor}{RGB}{32,178,170}
-\colorlet{coverlinecolor}{customcolor}
-\usepackage{cprotect}
-
-\addbibresource[location=local]{reference.bib} % 参考文献，不要删除
-
-\usepackage{background}
-\backgroundsetup{placement=top,scale=1,angle=0,opacity=1,contents={\includegraphics[width=\paperwidth, keepaspectratio]{Bilder/header.png}}}
-
-% --------------------------------------------------------------
-% Title Fonts Settings
-% --------------------------------------------------------------
-%\usepackage{sectsty}
-%\allsectionsfont{\sffamily}
-%\chapterfont{\huge\sffamily}
+\documentclass[a4paper,10pt,openany]{scrbook}
+\usepackage{hcwsa}
 
 \begin{document}
+
+% Alles was vor der eigentlichen Arbeit ist (Titelseite, Verzeichnise)
+\frontmatter
 
 \begin{titlepage}
 \newgeometry{margin = 0in}
 \parindent=0pt
 \includegraphics[width=\linewidth]{Bilder/Front_Cover_.png}
 \end{titlepage}
+%\cleardoublepage
 
-\maketitle
-\frontmatter
+\chapter*{制作团队}
+
+asdf
+
+\newpage
+
+\chapter*{序言}
+
+fdsa
+
+
+\newpage
+
+\chapter*{修订}
+
+fdsa
+
+%\maketitle
 
 \tableofcontents
 
@@ -63,23 +43,15 @@
 
 \part{初来乍到}
 
-\include{初来乍到/银行}
-\include{初来乍到/医疗保险}
-\include{初来乍到/住房}
-\include{初来乍到/申请签证及入境}
-\include{初来乍到/重要事务办事点}
-\include{初来乍到/入境两周内必办事宜}
-\include{初来乍到/RWTH注册和管理系统}
-\include{初来乍到/延签和居留许可}
+%\include{初来乍到/银行}
+%\include{初来乍到/医疗保险}
+%\include{初来乍到/住房}
+%\include{初来乍到/申请签证及入境}
+%\include{初来乍到/重要事务办事点}
+%\include{初来乍到/入境两周内必办事宜}
+%\include{初来乍到/RWTH注册和管理系统}
+%\include{初来乍到/延签和居留许可}
 
-\part{在亚琛学习和生活}
-
-\include{在亚琛学习和生活/学习、实习和科研}
-
-\nocite{*}
-
-\printbibliography[heading=bibintoc, title=\ebibname]
-\appendix
 
 \begin{titlepage}
 \newgeometry{margin = 0in}
