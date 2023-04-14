@@ -193,10 +193,16 @@
 
 \ifdefstring{\ELEGANT@lang}{cn}{
   \ifdefstring{\ELEGANT@chinesefont}{founder}{
+    %\RequirePackage[UTF8, scheme=plain, fontset=none]{xeCJK}
     \RequirePackage[UTF8, scheme=plain, fontset=none]{ctex}
+    \iffalse
     \setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong-Z01}
     \setCJKsansfont[BoldFont={FZHei-B01}]{FZKai-Z03}
     \setCJKmonofont[BoldFont={FZHei-B01}]{FZFangSong-Z02}
+    \fi
+    \setmainfont{WenQuanYi Micro Hei}
+    \setsansfont{WenQuanYi Micro Hei}
+    \setmonofont{WenQuanYi Zen Hei Mono}
     \setCJKfamilyfont{zhsong}{FZShuSong-Z01}
     \setCJKfamilyfont{zhhei}{FZHei-B01}
     \setCJKfamilyfont{zhkai}[BoldFont={FZHei-B01}]{FZKai-Z03}
