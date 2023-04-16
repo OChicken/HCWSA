@@ -4,6 +4,7 @@
 \RequirePackage[UTF8]{ctex}
 \setmainfont{Noto Sans} % set English mainfont as sffamily
 
+\RequirePackage{indentfirst}
 \RequirePackage{setspace}
 \setlength{\parskip}{0pt}
 
@@ -53,20 +54,3 @@
 
 % Adjust the space before chapters
 \RedeclareSectionCommand[beforeskip=-1.5\baselineskip plus -1ex minus -.2ex]{chapter}
-
-\makeatletter
-\@removefromreset{chapter}{part}
-\@removefromreset{section}{chapter}
-\@addtoreset{chapter}{part}
-\@addtoreset{section}{chapter}
-\makeatother
-
-\counterwithin{chapter}{part}
-\counterwithin{section}{chapter}
-
-\renewcommand{\thepart}{\Alph{part}}
-\renewcommand{\thechapter}{\thepart.\arabic{chapter}}
-\renewcommand{\thesection}{\thechapter.\arabic{section}}
-
-\DeclareTOCStyleEntry[numwidth=2.5em]{tocline}{chapter}
-\DeclareTOCStyleEntry[numwidth=3em]{tocline}{section}
