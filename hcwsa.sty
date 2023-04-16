@@ -2,7 +2,9 @@
 
 \newcommand{\textsbf}[1]{\textsf{\textbf{#1}}}
 \RequirePackage[UTF8]{ctex}
+
 \RequirePackage{setspace}
+\setlength{\parskip}{0pt}
 
 \RequirePackage{color,xcolor}
 \definecolor{lightblue}{HTML}{60C5E8}
@@ -38,12 +40,13 @@
 
 \RequirePackage{enumitem}
 
-\usepackage{background}
+\RequirePackage{background}
 \backgroundsetup{placement=top,scale=1,angle=0,opacity=1,contents={\includegraphics[width=\paperwidth, keepaspectratio]{Bilder/header.png}}}
 
-\renewcommand{\thepart}{\Alph{part}}
+% Adjust the space before chapters
+\RedeclareSectionCommand[beforeskip=-1.5\baselineskip plus -1ex minus -.2ex]{chapter}
 
-\usepackage{remreset}
+\RequirePackage{remreset}
 \makeatletter
 \@removefromreset{chapter}{part}
 \@removefromreset{section}{chapter}
