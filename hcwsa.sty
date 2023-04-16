@@ -60,10 +60,12 @@
 \@addtoreset{section}{chapter}
 \makeatother
 
-\usepackage{chngcntr}
 \counterwithin{chapter}{part}
 \counterwithin{section}{chapter}
 
 \renewcommand{\thepart}{\Alph{part}}
 \renewcommand{\thechapter}{\thepart.\arabic{chapter}}
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
+
+\DeclareTOCStyleEntry[numwidth=2.5em]{tocline}{chapter}
+\DeclareTOCStyleEntry[numwidth=3em]{tocline}{section}
