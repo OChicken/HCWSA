@@ -31,7 +31,7 @@
 \RequirePackage{geometry}
 \geometry{
   a4paper,
-  top=25.2mm, bottom=25.4mm,
+  top=29.4mm, bottom=12.7mm,
   left=20mm, right=20mm,
   headheight=2.17cm,
   headsep=4mm,
@@ -39,6 +39,13 @@
 }
 
 \RequirePackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+
+\RequirePackage{scrlayer-scrpage}
+\setlength{\footheight}{12.7mm}
+\clearpairofpagestyles
+\setkomafont{pagenumber}{\LARGE}
+\ohead{\pagemark\\\Large}
 
 \RequirePackage{background}
 \backgroundsetup{placement=top,scale=1,angle=0,opacity=1,contents={\includegraphics[width=\paperwidth, keepaspectratio]{Bilder/header.png}}}
@@ -46,7 +53,6 @@
 % Adjust the space before chapters
 \RedeclareSectionCommand[beforeskip=-1.5\baselineskip plus -1ex minus -.2ex]{chapter}
 
-\RequirePackage{remreset}
 \makeatletter
 \@removefromreset{chapter}{part}
 \@removefromreset{section}{chapter}
