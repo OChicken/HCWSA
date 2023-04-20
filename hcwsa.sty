@@ -9,7 +9,7 @@
 \setlength{\parskip}{0pt}
 
 \RequirePackage{color,xcolor}
-\definecolor{lightblue}{HTML}{60C5E8}
+\definecolor{lightblue}{HTML}{0189F9}
 
 \RequirePackage{hyperref}
 \hypersetup{
@@ -29,6 +29,13 @@
   linktocpage
 }
 \RequirePackage{graphicx}
+\RequirePackage{float}
+
+% Caption setup
+\RequirePackage{caption}
+\DeclareCaptionLabelFormat{english}{\textbf{#1}~#2}
+\captionsetup[figure]{name=Fig}
+\captionsetup[table]{name=Table}
 
 \RequirePackage{geometry}
 \geometry{
@@ -55,3 +62,7 @@
 
 % Adjust the space before chapters
 \RedeclareSectionCommand[beforeskip=-1.5\baselineskip plus -1ex minus -.2ex]{chapter}
+
+% Global footnote number (independent on chapter)
+\RequirePackage{chngcntr}
+\counterwithout{footnote}{chapter}
