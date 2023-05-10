@@ -29,9 +29,9 @@ git push                 # 可选
 
 1. 把 `hcwsa.pdf` 压缩为新的 `亚琛新生手册2023.pdf`；
 
-2. 删除 `hcwsa.pdf` 和 `hcwsa.xdv` (另一个临时文件)；
+2. `git add`、`git commit`、`git push` 三连，把新版的 `亚琛新生手册2023.pdf` 推到远程仓库；
 
-3. `git add`、`git commit`、`git push` 三连，把新版的 `亚琛新生手册2023.pdf` 推到远程仓库。
+3. 删除 `hcwsa.pdf` 和 `hcwsa.xdv` (另一个临时文件)。
 
 # 协议 License
 
