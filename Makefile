@@ -3,4 +3,5 @@ deploy:
 	git add 亚琛新生手册2023.pdf
 	git commit -m "deploy on $(shell date)"
 	git push
+	rm -rf *.aux *.rel
 	rm hcwsa.pdf
